@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Submission Result</h1>
+        <p id="amountOfWork"></p> <!-- Display Amount of Work Completed -->
+        <p id="moreTime"></p> <!-- Display More Time to Complete -->
+        <a href="index.html">Go Back</a> <!-- Link to go back to the form page -->
+    </div>
+
+    <script>
+        // Get URL parameters to retrieve the amount of work and more time
+        const urlParams = new URLSearchParams(window.location.search);
+        const amountOfWork = urlParams.get('amountOfWork');
+        const moreTime = urlParams.get('moreTime');
+
+        // Display the results
+        document.getElementById('amountOfWork').innerText = `Amount of Work Completed: ${amountOfWork}%`;
+        document.getElementById('moreTime').innerText = `More Time to Complete: ${moreTime}`;
+    </script>
+</body>
+</html>
